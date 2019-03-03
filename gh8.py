@@ -10,10 +10,10 @@ from time import sleep
 import urllib
 from RPLCD import CharLCD
 
-chId = 673945                                   # Thingspeak Channel Id
-tsKey='NAK14Z0XFYQHBRGA'                        # Thingspeak API key
-tsUrl='https://api.thingspeak.com/update?'      # Thingspeak data update url
-ts = thingspeak.Channel(tsUrl ,tsKey, chId)
+global chId = 673945                                   # Thingspeak Channel Id
+global tsKey='NAK14Z0XFYQHBRGA'                        # Thingspeak API key
+global tsUrl='https://api.thingspeak.com/update?'      # Thingspeak data update url
+global ts = thingspeak.Channel(tsUrl ,tsKey, chId)
 
 # Read temperature and humidity
 def readDHT():
@@ -35,9 +35,6 @@ def display():
 
 # Main function
 def main():
-
-    global tsKey
-    global tsUrl
 
     while True:
       try:
